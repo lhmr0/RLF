@@ -29,14 +29,14 @@ public class ClienteTest extends TestCase {
 
     public void testRegistrarClienteClave() {
         System.out.println("Registrar Cliente con la Clave y Repetir clave diferentes");
-        //Clave 12345 y Repetir Clave 12346 incorrectos
+        //Clave 12345 y Repetir Clave 123445 incorrectos
         Cliente cliente = new Cliente("arthurithoz", "12345", "123445", "theoity@gmail.com","58526598",
                 "Arthur", "Varon", "Peru");
         assertFalse(cliente.RegistrarCliente());
     }
  public void testRegistrarDniCantidad() {
         System.out.println("Registrar Cliente con numero diferente de 8 en DNI");
-        //Nombre J0se Uti4 incorrecto
+        //585268598 mas de 8 digitos en DNI
         Cliente cliente = new Cliente("arthuritho", "12345", "12345", "theoity@gmail.com","585268598",
                 "4rthuR", "Varon", "Peru");
         assertFalse(cliente.RegistrarCliente());
@@ -44,7 +44,7 @@ public class ClienteTest extends TestCase {
  
  public void testRegistrarDniNoNumero() {
         System.out.println("Registrar Cliente con caracteres diferentes a numeros en DNI");
-        //Nombre J0se Uti4 incorrecto
+        //58as8598 el dni solo acepta numeros
         Cliente cliente = new Cliente("arthuritho", "12345", "12345", "theoity@gmail.com","58as8598",
                 "4rthuR", "Varon", "Peru");
         assertFalse(cliente.RegistrarCliente());
@@ -52,7 +52,7 @@ public class ClienteTest extends TestCase {
  
     public void testRegistrarClienteNombre() {
         System.out.println("Registrar Cliente con numeros en el Nombre");
-        //Nombre J0se Uti4 incorrecto
+        //Nombre 4rthur incorrecto
         Cliente cliente = new Cliente("arthuritho", "12345", "12345", "theoity@gmail.com","58526598",
                 "4rthuR", "Varon", "Peru");
         assertFalse(cliente.RegistrarCliente());
